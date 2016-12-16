@@ -69,10 +69,11 @@ $( function() {
    
     //$.getJSON("http://www.analogpixel.org/flashcards/cards/sysadmin.json.js").done(function(d) { console.log("yay",x.repsonseText)}).fail( (x) => {console.log("booo", x.repsonseText )})
     
-    $.getJSON("/flashcards/cards/sysadmin.json.js")
-        .done(function(d) { max = d.length; shuffle(d); cards = d; refreshCard(); } )
-        .fail( function(x) { d = JSON.parse(x.responseText); max = d.length; shuffle(d); cards = d; refreshCard(); });
+    $.getJSON("/flashcards/cards/sysadmin.json")
+        .done( function(d) { max = d.length; shuffle(d); cards = d; refreshCard(); } )
+        .fail( function(x) { console.log("failed to get data", x) });
 
+        // d = JSON.parse(x.responseText); max = d.length; shuffle(d); cards = d; refreshCard();
     /*
 	$.getJSON("http://www.analogpixel.org/flashcards/cards/sysadmin.json.js", (d) => { 
         //d = JSON.parse(d);
