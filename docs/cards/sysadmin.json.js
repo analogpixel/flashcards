@@ -25,7 +25,7 @@
   ["Process state for interupitble sleep (waiting for an event to complete, waiting for input)", "S"],
   ["Process state for stopped, either by a job control signal or because it is being traced", "T"],
   ["Make a file unwritable by root", "chattr -i file"],
-  ["where is password strength and aging kept ", "/etc/login.defs"],
+  ["where is password strength and aging kept", "/etc/login.defs"],
   ["How does umask work","it subtracts from full access 777, so 000 would end up giving you full access since nothing is removed, any place a 1 shows up, it removes from rwx so 010 removes write"],
   ["steps for adding logical volumes","pvcreate /dev/sda<br>vgcreate vgname /dev/sda<br>lvcreate -l 100%FREE -n lvname vgname<br>mkfs /dev/vgname/lvname"]
 
