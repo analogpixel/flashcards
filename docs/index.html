@@ -67,7 +67,9 @@ function down() {
 */
 $( function() {
    
+    $.getJSON("http://www.analogpixel.org/flashcards/cards/sysadmin.json.js").done(function(d) { console.log("yay",x.repsonseText)}).fail( (x) => {console.log("booo", x.repsonseText )})
 
+    /*
 	$.getJSON("http://www.analogpixel.org/flashcards/cards/sysadmin.json.js", (d) => { 
         //d = JSON.parse(d);
         console.log("got",d)
@@ -77,7 +79,7 @@ $( function() {
 
 		refreshCard();		
 	} );
-
+    */
 } );
 
 
