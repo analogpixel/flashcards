@@ -68,6 +68,7 @@ function down() {
 $( function() {
 	$.getJSON("cards/sysadmin.json", (d) => { 
         d = JSON.parse(d);
+        console.log("got",d)
 		max = d.length-1;
 		shuffle(d);
 		cards = d;
