@@ -1,0 +1,32 @@
+[
+  ["List open files in linux","lsof"],
+  ["List what users are using files","fuser"],
+  ["List listening tcp ports", "netstat -lt <br> or <br> netstat -ltn (don't resolve port names)"],
+  ["What does 1>&2 mean in shell","redirect 1(stdout) to 2 stderr the & means use file handle, and not the filename 2"],
+  ["Sort on column 3 of the group file using : as separator", "sort -t: -k3,3 /etc/group  (without ,3 it will sort to end of line)"],
+  ["Use cut to get the 3rd column of the group file", "cut -d: -f3 /etc/group"],
+  ["Read a file line by line in bash with a while loop", "cat test.txt | while read f ; do echo \"--${f}--\"; done"],
+  ["bash if then else", "if [ test ] ; then blah<br> elif [ test ]<br> blah<br> else<br> blah<br>fi"],
+  ["edit command history in bash", "fc"],
+  ["option to pass bash to debug a script", "-x"],
+  ["name of the linux kernel in /boot", "vmlinuz"],
+  ["find setuid or Guid files", "find / -perm /u=s,g=s"],
+  ["What is the EUID of a process", "The effective UID, what permisions and files the process has access to. mostly setuid files"],
+  ["What is the first thing you need to do to create a process", "fork"],
+  ["what is the process id of init", "1"],
+  ["what happens to children when a parent process dies", "the children are moved under init as their parent process"],
+  ["what is the default signal for kill", "TERM or 15"],
+  ["how do you start a stopped process", "kill -s CONT id"],
+  ["what is a zombie process", "A child process that has terminated before the parent has called wait"],
+  ["Run strace on forked processes and output to a file and just look at network calls", "strace -o /tmp/output -f -e trace=network"],
+  ["In top how do you sort by CPU and Memory", "P is for cpu, M is for memory"],
+  ["Process state for uninterruptible sleep (usually IO issue)", "D"],
+  ["Process state for running or runnable", "R"],
+  ["Process state for interupitble sleep (waiting for an event to complete, waiting for input)", "S"],
+  ["Process state for stopped, either by a job control signal or because it is being traced", "T"],
+  ["Make a file unwritable by root", "chattr -i file"]
+  ["where is password strength and aging kept ", "/etc/login.defs"],
+  ["How does umask work","it subtracts from full access 777, so 000 would end up giving you full access since nothing is removed, any place a 1 shows up, it removes from rwx so 010 removes write"],
+  ["steps for adding logical volumes","pvcreate /dev/sda<br>vgcreate vgname /dev/sda<br>lvcreate -l 100%FREE -n lvname vgname<br>mkfs /dev/vgname/lvname"]
+
+]

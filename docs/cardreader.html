@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Card Reader</title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+
+<div id=card>
+	<div id=cardData></div>
+</div>
+
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/hammer.min.js"></script>
+<script>
+
+var pointer=0;
+var max=0;
+var cards;
+var side=0;
+
+/**
+ * Shuffles array in place. ES6 version
+ * @param {Array} a items The array containing the items.
+ */
+function shuffle(a) {
+    for (let i = a.length; i; i--) {
+        let j = Math.floor(Math.random() * i);
+        [a[i - 1], a[j]] = [a[j], a[i - 1]];
+    }
+}
+
+/**
+* refresh card display
+*/
+function refreshCard() {
+	$("#cardData").html( cards[pointer][side] );
+}
+
+function right() { 
+	pointer = pointer + 1
+	if (pointer > max) { pointer = 0; }
+    side = 0;
+    refreshCard();
+}
+
+function left() {
+	pointer = pointer -1;
+	if (pointer < 0) { pointer = max; }
+	side=0;
+	refreshCard();
+}
+
+function up() {
+	side = 0;
+	refreshCard();
+}
+
+function down() {
+	side = 1;
+	refreshCard();
+}
+
+/**
+* page init function
+*/
+$( function() {
+	$.getJSON("/cards/sysadmin.json", (d) => { 
+		max = d.length-1;
+		shuffle(d);
+		cards = d;
+
+		refreshCard();		
+	} );
+
+} );
+
+
+
+$(document).keydown(function(e) {
+    switch(e.which) {
+        case 37: // left
+        	left();
+        	break;
+
+        case 38: // up
+        	up();
+        	break;
+
+        case 39: // right
+        	right();
+        	break;
+
+        case 40: // down
+        	down();
+        	break;
+
+        default: return; // exit this handler for other keys
+    }
+    refreshCard();
+    e.preventDefault(); // prevent the default action (scroll / move caret)
+});
+
+// http://hammerjs.github.io/examples/
+var mc = new Hammer(document.getElementById('card'));
+mc.on("tap" , () => { console.log("tap"); side ^= 1; refreshCard(); } );
+mc.on("swipeleft", () => { left(); } );
+mc.on("swiperight", () => { right(); } );
+
+</script>
+
+</body>
+</html>
