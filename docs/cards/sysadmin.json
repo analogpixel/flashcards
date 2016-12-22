@@ -27,6 +27,11 @@
   ["Make a file unwritable by root", "chattr -i file"],
   ["where is password strength and aging kept", "/etc/login.defs"],
   ["How does umask work","it subtracts from full access 777, so 000 would end up giving you full access since nothing is removed, any place a 1 shows up, it removes from rwx so 010 removes write"],
-  ["steps for adding logical volumes","pvcreate /dev/sda<br>vgcreate vgname /dev/sda<br>lvcreate -l 100%FREE -n lvname vgname<br>mkfs /dev/vgname/lvname"]
+  ["steps for adding logical volumes","pvcreate /dev/sda<br>vgcreate vgname /dev/sda<br>lvcreate -l 100%FREE -n lvname vgname<br>mkfs /dev/vgname/lvname"],
+  ["List the sizes, partion tables, model numbers and manufacturers of every disk on the system in linux", "parted -l"],
+  ["List all block devices", "lsblck -o name,mountpoint,label,size,uuid"],
+  ["Get and modify your hard disk at a physical level, power options, read only flags...etc", "hdparm  to view a drives info hdparm -I /dev/sda3<br>If your drive ships with Acoustic management, you can disable it with hdparm -M 254"],
+  ["What 4 SMART parameters can predict drive failure the best", "error count, reallocation count, off-line reallocation count, and number of sectores on probation.  All of these values should be 0"],
+  ["What program reads SMART data in linux","smartmontools package, smartd for continous monitoring, and smartctl for scripted monitoring"]
 
 ]
