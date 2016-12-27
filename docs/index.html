@@ -35,7 +35,7 @@ function shuffle(a) {
 * refresh card display
 */
 function refreshCard() {
-	$("#cardData").html( cards[pointer][side] );
+	$("#cardData").html( "<span>" + cards[pointer][side] + "<span>");
 }
 
 function right() { 
@@ -67,6 +67,7 @@ function down() {
 */
 $( function() {
     $.getJSON("/flashcards/cards/sysadmin.json")
+    //$.getJSON("cards/sysadmin.json")
         .done( function(d) { max = d.length -1 ; shuffle(d); cards = d; refreshCard(); } )
         .fail( function(x) { console.log("failed to get data", x) });
 } );

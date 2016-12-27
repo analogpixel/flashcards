@@ -32,6 +32,23 @@
   ["List all block devices", "lsblck -o name,mountpoint,label,size,uuid"],
   ["Get and modify your hard disk at a physical level, power options, read only flags...etc", "hdparm  to view a drives info hdparm -I /dev/sda3<br>If your drive ships with Acoustic management, you can disable it with hdparm -M 254"],
   ["What 4 SMART parameters can predict drive failure the best", "error count, reallocation count, off-line reallocation count, and number of sectores on probation.  All of these values should be 0"],
-  ["What program reads SMART data in linux","smartmontools package, smartd for continous monitoring, and smartctl for scripted monitoring"]
+  ["What program reads SMART data in linux","smartmontools package, smartd for continous monitoring, and smartctl for scripted monitoring"],
+  ["In windows partitioning How many primary partitions can you have","4"],
+  ["In windows partitioning what position should the extended partition be?","at the end"],
+  ["Maximum size of partitions under MBR","2TB"],
+  ["Commands to modify linux partitions","cfdisk, fdisk, parted, gparted"],
+  ["Explain raid 0", "Striping data among disks for speed.  no data protection"],
+  ["Explain raid 1", "Mirror data among drives"],
+  ["Explain raid 1+0 or 0+1", "Mirror and stripe need at least 4 disks"],
+  ["Explain raid 5", "stripes both data and parity infomration, adding redunancy while improving read performance"],
+  ["Explain raid 6", "like raid 5, but with two parity disks."],
+  ["Command to control software raid in linux", "mdadm"],
+  ["Dockerfile commannds to set what to run, and the arguments to run", "ENTRYPOINT and CMD"],
+  ["Dockerfile command to set the working directory", "WORKDIR /path"],
+  ["Dockerfile command to set a port active", "expose 5000"],
+  ["Dockerfile command to run a command during build", "RUN"],
+  ["Dockerfile command to copy a file","COPY"],
+  ["Bash variable that returns all arguments", "$@"],
+  ["How to shift arg variables in bash ($2 becomes $1)", "shift"]
 
 ]
