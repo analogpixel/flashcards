@@ -49,6 +49,19 @@
   ["Dockerfile command to run a command during build", "RUN"],
   ["Dockerfile command to copy a file","COPY"],
   ["Bash variable that returns all arguments", "$@"],
-  ["How to shift arg variables in bash ($2 becomes $1)", "shift"]
+  ["How to shift arg variables in bash ($2 becomes $1)", "shift"],
+  ["create a snapshot with lvm", "vgcreate DEMO /dev/sdb<br>lvcreate -L 1G -n web1 DEMO<br>lvcreate -L 1G -s -n web1-snap DEMO/web1"],
+  ["How do you extend a Logical volume", "lvextend -r -l +100%FREE /dev/centos/root"],
+  ["What file holds filesystem information","/etc/fstab"],
+  ["What file hold mounted filesystem information","/etc/mtab"],
+  ["describe the fields in /etc/fstab", "1) the device<br>2) the Mount point<br>3)The fs type<br>4) mount options<br>5-6)mostly unused 0 0"],
+  ["create a new swap partition", "dd if=/dev/zero of=/swap1<br>mkswap /swap1<br>swapon /swap1<br>swapon -s (review all swaps)"],
+  ["AoE stands for", "ATA over Etherenet"],
+  ["FCoE stands for", "Fibre Channel over Etherenet"],
+  ["iSCSI stands for", "SCSI over IP"],
+  ["A client that mounts iSCSI disks is called the", "initiator"],
+  ["A server that presents disks via ISCSI is called the", "target"],
+  ["What package has iSCSI tools in linux", "open-scsi on ubuntu and iscsi-initiator-utils on centos"],
+  ["What command do you use to configure iSCSI on linux","iscsiadm"]
 
 ]
