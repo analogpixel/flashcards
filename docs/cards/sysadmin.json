@@ -62,6 +62,22 @@
   ["A client that mounts iSCSI disks is called the", "initiator"],
   ["A server that presents disks via ISCSI is called the", "target"],
   ["What package has iSCSI tools in linux", "open-scsi on ubuntu and iscsi-initiator-utils on centos"],
-  ["What command do you use to configure iSCSI on linux","iscsiadm"]
+  ["What command do you use to configure iSCSI on linux","iscsiadm"],
+  ["where does cron store crontabs","/var/spool/cron"],
+  ["Cron format", "minute(0-59) hour(0-23) DayOfMounth(1-31) Month(1-12) weekday(0-6 0=sunday) command"],
+  ["find files that have not been accessed in 3 days", "find /tmp -atime +3 -type f -print"],
+  ["explain + and - in relation to find atime/ctime..", "+n is more than n<br> n is exactly n<br>-n is less than n<br>"],
+  ["change the atime of a file", "touch -at 1612281533 a"],
+  ["If a cron.allow exists, then", "only people in that file can use cron"],
+  ["If a cron.deny exists then", "Everyone except those in the file can use cron"],
+  ["If a cron.allow and cron.deny do no exist then", "anyone can use cron"],
+  ["what does the % mean in a cron command", "Anything after a % is sent to the command as stdin"],
+  ["What option prevents find from jumping off local file systems", "-xdev"],
+  ["find all files except those named apple", "find / ! -name apple -print"],
+  ["Copy files from one dir to another using tar", "tar -cf - -C /source1 . | (cd /dest1; tar -xpf -) <br>Copy files from /source1 to /dest1"],
+  ["Create a level 0 dump and restore from it", "dump -0u -f /backup /home<br>restore -i -f /backup<br><br>the u tells it to update the time table for incrementals"]
+
+
+
 
 ]
