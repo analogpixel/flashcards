@@ -75,7 +75,13 @@
   ["What option prevents find from jumping off local file systems", "-xdev"],
   ["find all files except those named apple", "find / ! -name apple -print"],
   ["Copy files from one dir to another using tar", "tar -cf - -C /source1 . | (cd /dest1; tar -xpf -) <br>Copy files from /source1 to /dest1"],
-  ["Create a level 0 dump and restore from it", "dump -0u -f /backup /home<br>restore -i -f /backup<br><br>the u tells it to update the time table for incrementals"]
+  ["Create a level 0 dump and restore from it", "dump -0u -f /backup /home<br>restore -i -f /backup<br><br>the u tells it to update the time table for incrementals"],
+  ["Log file thats holds user login and logout information", "wtmp<br>lastlog contains just last login of each user, and never grows"],
+  ["what does the syslog config line mean: *.warning;lpr,local1.none  @loghost", "Send all logs with severity warning and above except those from lpr and local1 to the host loghost"],
+  ["what does the syslog config line mean: *.emerg;user.none     *","send all emergency messages to all logged in users (*)"],
+  ["How you check kernel logs", "dmesg<br>dmesg -n # changes at what level the kernel logs 7 being most verbose"],
+  ["what is the difference between cron and anacron", "cron runs every minute, anacron runs once a day.  Log rotation should be in anacron because it doesn't require a sepcial time, so if machine down, it'll eventually run"]
+
 
 
 
