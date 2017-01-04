@@ -6,7 +6,7 @@
   ["Sort on column 3 of the group file using : as separator", "sort -t: -k3,3 /etc/group  (without ,3 it will sort to end of line)"],
   ["Use cut to get the 3rd column of the group file", "cut -d: -f3 /etc/group"],
   ["Read a file line by line in bash with a while loop", "cat test.txt | while read f ; do echo \"--${f}--\"; done"],
-  ["bash if then else", "if [ test ] ; then blah<br> elif [ test ]<br> blah<br> else<br> blah<br>fi"],
+  ["bash if then else", "if [ test ] ; then blah<br> elif [ test ] ; then <br> blah<br> else<br> blah<br>fi"],
   ["edit command history in bash", "fc"],
   ["option to pass bash to debug a script", "-x"],
   ["name of the linux kernel in /boot", "vmlinuz"],
