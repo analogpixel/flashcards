@@ -146,7 +146,7 @@
   ["command to add default route", "route add default gw 132.236.227.1 eth0"],
   ["command to add a route", "route add -net 132.236.220.64 netmask 255.255.255.192 gw 132.236.212.6 eth1"],
   ["what command prints out the arp table", "arp -a"],
-  ["configure ubutnu network interfaces","/etc/network/interfaces<br/etc/hostname"]
+  ["configure ubutnu network interfaces","/etc/network/interfaces<br/etc/hostname"],
   ["configure centos network interfaces","/etc/sysconfig/network-scripts/ifcfg-eth*"],
   ["change the duplex of the interface with ethtool","ethtool -s eth0 speed 100 autoneg off<br><br>ETHTOOL_OPTS=blah can be added to centos network config"],
   ["Dns Configuration goes in what file", "/etc/resolv.conf<br><br>search searc1.bob.com search2.bob.com<br>nameserver 192.168.1.1"],
