@@ -109,7 +109,7 @@
   ["list all udev attributes for a device (sda)", "udevadm info -a -n sda"],
   ["command to list attached usb devices", "lsusb installed from the usbutils package"],
   ["how do you reload udev rules after editing them","udevadm control --reload-rules"],
-  ["what is the TCP/IP stack","Application Layer(ssh/dns,ftp)<br>Transport Layer(tcp/udp)<br>Network Layer (ip/icmp)<br>Link Layer(arp, device drivers)<br>physical Layer (coper,optical)"],
+  ["what is the TCP/IP stack","Application Layer(ssh/dns,ftp)<br>Transport Layer(tcp/udp)<br>Network Layer (ip/icmp)<br>Link Layer(arp, ethernet)<br>physical Layer (coper,optical)"],
   ["how big is an ipv4 and ipv6 address","ipv4: 4 bytes (32bits), ipv6: 16bytes (128bits)"],
   ["how many usable IPs are in a /24", "256 254 usable, 1 class c, 255.255.255.0"],
   ["how many usable IPs are in a /23", "512 510 usable, 2 class c, 255.255.254.0"],
@@ -133,5 +133,22 @@
   ["what settings do you need if you have multiple puppet servers (ssl requirement)","dns_alt_names"],
   ["Which two aspects set defined types apart from native types","Defined types do not have a built in concept of providers<br>Native types are written in Ruby, defined types are written in Puppet."],
   ["With class myclass($param_one = \"default\") how would you set param_one from hiera","myclass::parameter_one: \"my new var\""],
-  ["how do you do a multiline hiera string", "varname: |<br>..<br>..<br>(end in a blank line)"]
+  ["how do you do a multiline hiera string", "varname: |<br>..<br>..<br>(end in a blank line)"],
+  ["MTU of Etherenet is how big?","1500 bytes"],
+  ["Max MTU of a jumbo frame is", "9000 bytes"],
+  ["MTU stands for","Maximum Transmission Unit"],
+  ["in linux check the mtu of a device","ifconfig eth0 or ip a show eth0"],
+  ["in linux change the mtu of eth0", "ip link set mtu 9000 dev eth0"],
+  ["How big is a mac address", "48bits  or 6Bytes"],
+  ["On unix what ports are reserved for system syservices?", "1024 and below"],
+  ["What are the 3 private ip4 spaces?", "10.0.0.0(A/8) 172.16.0.0(B/12) 192.168.0.0(C/16)"],
+  ["What command show the routing table","netstat -rn, or route"],
+  ["command to add default route", "route add default gw 132.236.227.1 eth0"],
+  ["command to add a route", "route add -net 132.236.220.64 netmask 255.255.255.192 gw 132.236.212.6 eth1"],
+  ["what command prints out the arp table", "arp -a"],
+  ["configure ubutnu network interfaces","/etc/network/interfaces<br/etc/hostname"]
+  ["configure centos network interfaces","/etc/sysconfig/network-scripts/ifcfg-eth*"],
+  ["change the duplex of the interface with ethtool","ethtool -s eth0 speed 100 autoneg off<br><br>ETHTOOL_OPTS=blah can be added to centos network config"],
+  ["Dns Configuration goes in what file", "/etc/resolv.conf<br><br>search searc1.bob.com search2.bob.com<br>nameserver 192.168.1.1"],
+  ["how do you change tcp/ip options", "/proc/sys/net/ipv4  or update /etc/sysctl.conf with the proc values"]
 ]
