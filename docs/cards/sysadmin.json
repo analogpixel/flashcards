@@ -26,7 +26,7 @@
   ["Process state for stopped, either by a job control signal or because it is being traced", "T"],
   ["Make a file unwritable by root", "chattr -i file"],
   ["where is password strength and aging kept", "/etc/login.defs"],
-  ["How does umask work","it subtracts from full access 777, so 000 would end up giving you full access since nothing is removed, any place a 1 shows up, it removes from rwx so 010 removes write"],
+  ["How does umask work","it subtracts from full access 777, so 000 would end up giving you full access since nothing is removed. bits are user|group|all 0=none 7=rwx"],
   ["steps for adding logical volumes","pvcreate /dev/sda<br>vgcreate vgname /dev/sda<br>lvcreate -l 100%FREE -n lvname vgname<br>mkfs /dev/vgname/lvname"],
   ["List the sizes, partion tables, model numbers and manufacturers of every disk on the system in linux", "parted -l"],
   ["List all block devices", "lsblck -o name,mountpoint,label,size,uuid"],
@@ -150,5 +150,42 @@
   ["configure centos network interfaces","/etc/sysconfig/network-scripts/ifcfg-eth*"],
   ["change the duplex of the interface with ethtool","ethtool -s eth0 speed 100 autoneg off<br><br>ETHTOOL_OPTS=blah can be added to centos network config"],
   ["Dns Configuration goes in what file", "/etc/resolv.conf<br><br>search searc1.bob.com search2.bob.com<br>nameserver 192.168.1.1"],
-  ["how do you change tcp/ip options", "/proc/sys/net/ipv4  or update /etc/sysctl.conf with the proc values"]
+  ["how do you change tcp/ip options", "/proc/sys/net/ipv4  or update /etc/sysctl.conf with the proc values"],
+  ["steps for ssh keyless setup","ssh-keygen<br>cp public_key /home/user/.ssh/authorized_keys<br>cp private_key /home/user/.ssh/identity"],
+  ["Make apache run as user apache group apache","Add<br>User apache<br>Group apache<br>to the httpd.conf"],
+  ["what port is ssl", "443"],
+  ["Make apache listen on port 80 for ip 10.10.10.10", "Listen 10.10.10.10:80"],
+  ["Disable directory listings in apache", "&#60;Directory /&#62;<br>Options -Indexes<br>&#60;/Directory&#62;"],
+  ["How do you create a CSR with openssl","openssl req -out geekflare.csr -newkey rsa:2048 -nodes -keyout geekflare.key"],
+  ["What line is added to httpd.conf to enable debugging","LogLevel debug"],
+  ["What apache module is needed for ssl","mod_ssl"],
+  ["How do you test apache configuration","httpd -t<br>or<br>apachectl configtest"],
+  ["Http error code 200 means", "Contnt found and served ok"],
+  ["Httpd error code 403 means", "Tried to access restricted file/folder"],
+  ["Httpd error code 503 means", "server is too busy or unavailable"],
+  ["In apache what is the difference between Location and Directory", "Directory is a file system object, Location is a URL object"],
+  ["explain apache Allow,Deny","check allows and allow, check denies and deny, deny everything else"],
+  ["explain apache Deny,Allow", "check  Denies and deny, check allows and allow, accept everything else"],
+  ["AWS Pricing models","On-Demand, Spot Instances, Reserved Instances, and Dedicated Hosts"],
+  ["what is and AWS AMI","Amazon Machine Images, a machine template"],
+  ["What is a DNS A record","The A record specified the IPv4 address"],
+  ["What is a DNS AAAA record", "The AAAA record  specifies that IPv6 address"],
+  ["What is a CNAME record", "The CNAME record specifies a domain name that has to be queried in order to resolve the original DNS query."],
+  ["What is a MX dns record","The MX resource record specifies a mail exchange server for a DNS domain name"],
+  ["What is a NS dns record", "The NS record specifies an authoritative name server for given host."],
+  ["What s a PTR dns record" ,"As opposed to forward DNS resolution (A and AAAA DNS records), the PTR record is used to look up domain names based on an IP address."],
+  ["what is a SOA dns record", "Start of Authority record, specifies core information about a dns zone."],
+  ["what is a TXT dns record", "The text record can hold arbitrary non-formatted text string"],
+  ["create a new array with mdadm","mdadm --create --verbose /dev/md0 --level=1 /dev/sda1 /dev/sdb2"],
+  ["remove a disk from an array with mdadm", "mdadm /dev/md0 --fail /dev/sda1 --remove /dev/sda1"],
+  ["add a disk to an array with mdadm","mdadm --add /dev/md0 /dev/sdb1"],
+  ["how do you check the status of a raid controled with mdadm","cat /proc/mdstat"]
+
+
+
+
+
+
+
+
 ]
