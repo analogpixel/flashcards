@@ -179,13 +179,20 @@
   ["create a new array with mdadm","mdadm --create --verbose /dev/md0 --level=1 /dev/sda1 /dev/sdb2"],
   ["remove a disk from an array with mdadm", "mdadm /dev/md0 --fail /dev/sda1 --remove /dev/sda1"],
   ["add a disk to an array with mdadm","mdadm --add /dev/md0 /dev/sdb1"],
-  ["how do you check the status of a raid controled with mdadm","cat /proc/mdstat"]
-
-
-
-
-
-
-
+  ["how do you check the status of a raid controled with mdadm","cat /proc/mdstat"],
+  ["Commands to view memory on linux", "vmstat<br>free -m<br>/proc/meminfo/<br>top<br>"],
+  ["explain sql inner join"," the overlap of two tables"],
+  ["exaplin sql [side] outer join","all of the [side] and the overlap from both."],
+  ["how do you reload a bind configuration", "rndc reload"],
+  ["what do you need to do each time you update a bind zone", "update the serial number"],
+  ["what does a ptr record config look like in bind","100   IN  PTR   bob.hostname.com."],
+  ["what does /etc/resolv.conf look like", "search search1.com search2.com<br>nameserver 10.0.10.10<br>nameserver10.0.2.2<br>"],
+  ["what is the difference between a recursive and non-recurive dns server","recursive will return answers for everything, non-r will just return answers for what it has and a reference to another server for other stuff."],
+  ["name servers in /etc/resolve.conf must be","recursive, the resolver library does not undestand referals"],
+  ["this version of top can show disk utilization and network utilization", "atop, pressing D will sort by disk heavy processes"],
+  ["commit changes to git","git commit -a -m 'message'<br>git push origin master<br>"],
+  ["undo a bad git commit","git revert <name of bad commit>"],
+  ["squash last 3 commits to one", "git rebase -i HEAD~3"],
+  ["see list of all ansible variables (facts)", "ansible -m setup hostname"]
 
 ]
