@@ -208,7 +208,7 @@
   ["send a ping with the size of a jumbo frame", "ping -s 9000 host.com"],
   ["what is the average latencey from going to east coast to west coast", "~72ms"],
   ["what is the average latency from two places in the us", "~35ms"],
-  ["what is the latency between US and India", "~280ms"]
+  ["what is the latency between US and India", "~280ms"],
   ["what is the latency between US and Eruope", "~100-200ms"],
   ["how does traceroute work", "it sets the Time to Live flag from 1 to Max hops, and when a router along the way gets it to 0 it returns ICMP timeout"],
   ["show network coutners","netstat -s"],
